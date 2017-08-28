@@ -71,11 +71,14 @@
 				<div class="col-lg-7 my-auto">
 					<div class="header-content mx-auto">
 						<h1 class="mb-5">센치한 아침</h1>
-						<h5 class="mb-5">매일 똑같은 알람은 너무 지겹고 짜증납니다.. <br>이제는 알람도 감성적으로 듣고
-							싶습니다.</h5>
-						<p>
-						<h5 class="mb-5">그래서 직접 만들었습니다.</h5>
-						<h2 class="mb-5"><small>감성 음악 날씨 알람!</small> 센치한 아침</h2>
+						<h5 class="mb-5">
+							매일 똑같은 알람은 너무 지겹고 짜증납니다.. <br>이제는 알람도 감성적으로 듣고 싶습니다.
+						</h5>
+						<p>그래서 직접 만들었습니다.
+						<h5 class="mb-5"></h5>
+						<h2 class="mb-5">
+							<small>감성 음악 날씨 알람!</small> 센치한 아침
+						</h2>
 
 					</div>
 				</div>
@@ -486,7 +489,6 @@
 								<img src="img/realtime.jpg" width="350px" height="200px"
 									class="img-fluid" alt="">
 								<p>
-								
 								<h4>Firebase Realtime Database</h4>
 								<p class="text-muted">날씨 태그의 곡 정보를 realtime DB에 넣어 언제든지 곡
 									정보를 업데이트 또는 수정할 수 있도록 합니다.</p>
@@ -494,14 +496,12 @@
 							<div class="col-lg-4">
 								<img src="img/cloud.jpg" class="img-fluid" alt="">
 								<p>
-								
 								<h4>Firebase Cloud Storage</h4>
 								<p class="text-muted">알람이 울릴 때 표시될, 날씨 배경이 저장되어 있습니다.</p>
 							</div>
 							<div class="col-lg-4">
 								<img src="img/glide.png" class="img-fluid" alt="">
 								<p>
-								
 								<h4>Glide</h4>
 								<p class="text-muted">
 									앱 내의 이미지들을 로딩해줄 이미지 로딩 라이브러리 Glide가 사용되었습니다 <br>컨번스뷰나 또는
@@ -513,7 +513,6 @@
 							<div class="col-lg-4">
 								<img src="img/jamendo.png" class="img-fluid" alt="">
 								<p>
-								
 								<h4>Jamendo Music API</h4>
 								<p class="text-muted">알람이 울릴 때 재생될 노래를 가져오는 음악 스트링밍 API입니다.
 								</p>
@@ -521,7 +520,6 @@
 							<div class="col-lg-4">
 								<img src="img/openweathermap.png" class="img-fluid" alt="">
 								<p>
-								
 								<h4>Open Weather Map API</h4>
 								<p class="text-muted">
 									알람이 울리는 장소의 날씨를 가져올 떄 사용되는 날씨 API입니다. <br>해당 날씨를 통하여
@@ -531,10 +529,19 @@
 							<div class="col-lg-4">
 								<img src="img/realm.png" class="img-fluid" alt="">
 								<p>
-								
 								<h4>Realm Local Database</h4>
 								<p class="text-muted">등록된 알람과 재생된 노래의 정보를 저장하는 로컬 저장소로 Realm
 									DB가 사용되었습니다.</p>
+							</div>
+						</div>
+						<br><br><br><br><br>
+						<div class="section-heading text-center">
+							<h2>Data Flow</h2>
+							<hr>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+							<img src="img/appdataflow.png" class="img-fluid" alt="">
 							</div>
 						</div>
 					</div>
@@ -609,13 +616,11 @@
 				</div>
 				<div class="col-lg-6 my-auto">
 					<p class="text-muted">
-						알람화면에서 배경화면을 띄워주어야 하기 때문에 큰 사이즈의 이미지가 사용되었습니다.<br>
-						<br> 그렇기 때문에 용량이 상대적으로 클 수 밖에 없는데, 처음에는 이미지를 Glide를 활용하여 캐싱된
-						이미지를 뷰에 그대로 띄워주었습니다.<br>
-						<br>그러나 몇몇 경우에는 OutOfMemory가 발생하여 이미지 로딩을 실패하였고, 이미지 및 캐시메모리를
-						앱에 최적화 해야함을 깨달았습니다. <br>
-						<br>먼저, Heap메모리 사이즈를 변경하였고, 메모리가 부족할 경우 캐싱된 메모리를 비워주는 작업을
-						하였습니다.<br>
+						알람화면에서 배경화면을 띄워주어야 하기 때문에 큰 사이즈의 이미지가 사용되었습니다.<br> <br>
+						그렇기 때문에 용량이 상대적으로 클 수 밖에 없는데, 처음에는 이미지를 Glide를 활용하여 캐싱된 이미지를 뷰에
+						그대로 띄워주었습니다.<br> <br>그러나 몇몇 경우에는 OutOfMemory가 발생하여 이미지
+						로딩을 실패하였고, 이미지 및 캐시메모리를 앱에 최적화 해야함을 깨달았습니다. <br> <br>먼저,
+						Heap메모리 사이즈를 변경하였고, 메모리가 부족할 경우 캐싱된 메모리를 비워주는 작업을 하였습니다.<br>
 						<br> 또한 이미지 품질을 앱에 큰 영향이 끼치지 않는 선까지 낮추어 용량을 최적화 하였습니다.<br>
 						<br> 그리하여 이미지 로딩 실패를 방지할 수 있었고, 이미지 작업에서는 항상 최적화가 필요하다는 것을 다시
 						한번 깨달았습니다.
@@ -625,11 +630,14 @@
 			<br> <br>
 			<div class="row">
 				<div class="col-lg-6 my-auto">
-					<p class="text-muted">처음 안드로이드 개발을 해본 입장으로서 1가지 목표가
-						있었습니다.<br><br> "앱을 완성해서 Play 스토어에 올려 서비스까지 해보자" 였습니다.<br><br> 원했던 목표를 거의 달성하여
-						 의미 있고 즐거웠습니다.<br><br> 그리고 더욱 좋았던 것은 다른 프로젝트와 다르게 안드로이드 앱 개발은 개인이
-						상대적으로 쉽게 서비스를 만들어 제공할 수 있다는 것이었습니다.<br><br> 이러한 점이 참으로 매력적이었고 "센치한 아침"을 시작으로 향후 플레이스토어에서 클라이언트들과
-						소통하고 앱을 더욱 개선해가며 일련의 서비스를 경험해 볼 것이 기대 됩니다.</p>
+					<p class="text-muted">
+						처음 안드로이드 개발을 해본 입장으로서 1가지 목표가 있었습니다.<br> <br> "앱을 완성해서
+						Play 스토어에 올려 서비스까지 해보자" 였습니다.<br> <br> 원했던 목표를 거의 달성하여
+						의미 있고 즐거웠습니다.<br> <br> 그리고 더욱 좋았던 것은 다른 프로젝트와 다르게 안드로이드
+						앱 개발은 개인이 상대적으로 쉽게 서비스를 만들어 제공할 수 있다는 것이었습니다.<br> <br>
+						이러한 점이 참으로 매력적이었고 "센치한 아침"을 시작으로 향후 플레이스토어에서 클라이언트들과 소통하고 앱을 더욱
+						개선해가며 일련의 서비스를 경험해 볼 것이 기대 됩니다.
+					</p>
 				</div>
 				<div class="col-lg-6 my-auto text-center">
 					<h2>개발 후기</h2>
@@ -642,7 +650,7 @@
 
 	<footer>
 		<div class="container">
-			<p>&copy; 2017 Start Bootstrap. All Rights Reserved.</p>
+			<p>&copy; 2017 Created by Hyeon-Gi. All Rights Reserved.</p>
 			<ul class="list-inline">
 				<li class="list-inline-item"><a href="#">Privacy</a></li>
 				<li class="list-inline-item"><a href="#">Terms</a></li>
